@@ -1,4 +1,21 @@
 const request = require('request');
+const yargs = require('yargs');
+
+const argv = yargs
+// options takes object of command line set up.
+  .options({
+    address: {
+      demand: true,
+      alias: 'a',
+      describe: 'the full address to fetch weather for',
+      string: true
+    }
+  })
+  .help() // enables --help option in terminal
+  .alias('help', 'h') // two arguments. Actual command and new alias.
+  .argv;
+
+  console.log(argv);
 
 // takes two arguments (options, callback)
 // https://www.npmjs.com/package/request
