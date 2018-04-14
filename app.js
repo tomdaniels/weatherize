@@ -27,8 +27,10 @@ geocode.geocodeAddress(argv.address, (errorMessage, results) => {
         console.log(error);
       } else {
         let address = results.formatted_address;
-        console.log(`it is ${response.temperature} in the location ${address} and it feels like ${response.feelsLike}`);
+        console.log(`It's ${response.temperature} in the location ${address} and it feels like ${response.feelsLike}`);
       }
     })
   }
 });
+
+console.log('fetching data');
