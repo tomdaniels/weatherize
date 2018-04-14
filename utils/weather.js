@@ -8,7 +8,8 @@ function fetchWeather(latitude, longitude, address, callback) {
     if (!error && response.statusCode === 200) {
       callback(undefined, {
         location: address,
-        temperature: body.currently.temperature
+        temperature: body.currently.temperature,
+        feelsLike: body.currently.apparentTemperature
       });
     } else {
       callback('Unable to fetch weather');

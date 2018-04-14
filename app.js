@@ -1,7 +1,8 @@
 const request = require('request');
 const yargs = require('yargs');
+
+const weather = require('./utils/weather');
 const geocode = require('./utils/geocode');
-const fetchWeather = require('./utils/fetch-weather');
 
 const argv = yargs
 // options takes object of command line set up.
@@ -21,11 +22,11 @@ geocode.geocodeAddress(argv.address, (errorMessage, results) => {
   if (errorMessage) {
     console.log(errorMessage);
   } else {
-    fetchWeather.fetchWeather(results.latitude, results.longitude, results.formatted_address, (error, response) => {
+    weather.fetchWeather(results.latitude, results.longitude, results.formatted_address, (error, response) => {
       if (error) {
         console.log(error);
       } else {
-        console.log(response);
+        console.log(`it is ${response.temperature} in the location ${response.location} and it feels like ${response.feelsLike}`);
       }
     })
   }
