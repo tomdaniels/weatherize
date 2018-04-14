@@ -15,8 +15,7 @@ const argv = yargs
   .alias('help', 'h') // two arguments. Actual command and new alias.
   .argv;
 
-  var userInput = argv.address;
-  var address = encodeURIComponent(userInput);
+  var address = encodeURIComponent(argv.address);
 // takes two arguments (options, callback)
 // https://www.npmjs.com/package/request
 request({
