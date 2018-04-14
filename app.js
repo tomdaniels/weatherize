@@ -18,8 +18,6 @@ const argv = yargs
   .alias('help', 'h') // two arguments. Actual command and new alias.
   .argv;
 
-console.log(process);
-
 geocode.geocodeAddress(argv.address, (errorMessage, results) => {
   if (errorMessage) {
     console.log(errorMessage);
