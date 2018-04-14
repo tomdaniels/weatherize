@@ -1,10 +1,11 @@
 const request = require('request');
 
 function geocodeAddress(address) {
+  const encodedAddress = encodeURIComponent(address);
   // Request takes two arguments (options, callback)
   // https://www.npmjs.com/package/request
   request({
-    url: `https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyBrbTVAFbFHxscReX_Bgt-LnvPh_vwPbDQ&address=${address}`,
+    url: `https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyBrbTVAFbFHxscReX_Bgt-LnvPh_vwPbDQ&address=${encodedAddress}`,
     json: true
   }, (error, response, body) => {
     if (error) {
