@@ -10,7 +10,7 @@ var asyncAdd = (a, b) => {
   });
 };
 
-asyncAdd(5, 'b').then((result) => {
+asyncAdd(5, 2).then((result) => {
   console.log(`result: ${result}`);
 }, (error) => {
   console.log(`error: ${error}`)
@@ -25,11 +25,11 @@ asyncAdd(5, 'b').then((result) => {
 //
 // // can only resolve/reject a promise once
 // // once the state is set to resolve/rejected it can't be changed
-//
-// // somePromise.then(message => {
-// //     console.log(`mesage: ${message}`);
-// // })
-// // .catch(error => console.log(`error: ${error}`))
+// 
+// somePromise.then(message => {
+//     console.log(`mesage: ${message}`);
+// })
+// .catch(error => console.log(`error: ${error}`))
 //
 // // You can provide two functions as arguments to the then prototype on promises.
 // // instead of explicitly chaining .then().catch();
