@@ -10,10 +10,13 @@ var asyncAdd = (a, b) => {
   });
 };
 
-asyncAdd(5, 2).then((result) => {
-  console.log(`result: ${result}`);
-}, (error) => {
-  console.log(`error: ${error}`)
+asyncAdd(5, 7).then((result) => {
+  console.log('result: ', result);
+  return asyncAdd(result, 33); // must use return keyowrd to *return* the promise.
+}).then((result) => {
+  console.log('should be 45', result);
+}).catch(errorMessage => {
+  console.log('error: ', errorMessage);
 });
 
 // var somePromise = new Promise((resolve, reject) => {
@@ -25,7 +28,8 @@ asyncAdd(5, 2).then((result) => {
 //
 // // can only resolve/reject a promise once
 // // once the state is set to resolve/rejected it can't be changed
-// 
+// // catch is better for chaining. 
+//
 // somePromise.then(message => {
 //     console.log(`mesage: ${message}`);
 // })
