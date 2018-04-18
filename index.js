@@ -15,7 +15,7 @@ const argv = yargs
   .alias('help', 'h') // two arguments. Actual command and new alias.
   .argv;
 
-// ****************
+// **********
 
 const encodedAddress = encodeURIComponent(argv.address);
 const geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyBrbTVAFbFHxscReX_Bgt-LnvPh_vwPbDQ&address=${encodedAddress}`;
